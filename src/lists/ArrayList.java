@@ -68,4 +68,23 @@ public class ArrayList <E>
                         elementData[i] = elementData[i-1];
                 }
         }
+        
+        public E get(int index)
+        {
+        	return elementData[index];
+        }
+        
+        public void remove(int index) // ikke testet
+        {
+        	for(int i = elementData.length; i>=index; i--)
+        	{
+        		if(elementData[i] != null)
+        		{
+        			elementData[i-1] = elementData[i];
+        			if(elementData[i+1] == null){
+        				elementData[i] = null;
+        			}
+        		}
+        	}
+        }
 }
